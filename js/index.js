@@ -2,7 +2,7 @@ fetch('http://localhost:3000/grain')
 	.then(response => response.json())
 	.then(response => console.log(response))
 
-  grain.forEach((item, index, image)=> {
+  grain.forEach((item, index,)=> {
     const imageContainer = document.createElement('div');
     imageContainer.setAttribute('class', 'col-3 text-center');
 const itemList = document.querySelector("#item-list");
