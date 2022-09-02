@@ -1,8 +1,11 @@
-const itemList = document.querySelector('#item-list');
+fetch('http://localhost:3000/grain')
+	.then(response => response.json())
+	.then(response => console.log(response))
 
-store.forEach((item, index)=> {
+  grain.forEach((item, index, image)=> {
     const imageContainer = document.createElement('div');
-    imageContainer.setAttribute('class', 'text-center');
+    imageContainer.setAttribute('class', 'col-3 text-center');
+const itemList = document.querySelector("#item-list");
 
     const img = document.createElement('img'); 
     img.setAttribute('src', `${item.image}`);
@@ -29,4 +32,14 @@ store.forEach((item, index)=> {
     imageContainer.appendChild(addToCartBtn);
 
     itemList.appendChild(imageContainer)
+})
+document.querySelectorAll('.add-to-cart').forEach(item => {
+  item.addEventListener('click', event => {
+    //handle click
+    console.log("added")
+  })
+})
+document.addEventListener('DOMContentLoaded', async()=> {
+  products = await getGrain();
+  updateUI(grain);
 })
