@@ -1,6 +1,15 @@
-fetch('http://localhost:3000/grain')
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '93cfba9521msh8e281a782f5fda5p1d05e3jsn58878cfc1489',
+		'X-RapidAPI-Host': 'jumia-service.p.rapidapi.com'
+	}
+};
+
+fetch("https://jumia-service.p.rapidapi.com/")
 	.then(response => response.json())
 	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
   grain.forEach((item, index,)=> {
     const imageContainer = document.createElement('div');
