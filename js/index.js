@@ -1,12 +1,22 @@
-fetch('http://localhost:3000/grain')
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '93cfba9521msh8e281a782f5fda5p1d05e3jsn58878cfc1489',
+		'X-RapidAPI-Host': 'jumia-service.p.rapidapi.com'
+	}
+};
+
+fetch('https://jumia-service.p.rapidapi.com/api/product/search/grain/4', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
+	.catch(err => console.error(err));
+
 
   grain.forEach((item, index,)=> {
     const imageContainer = document.createElement('div');
     imageContainer.setAttribute('class', 'col-3 text-center');
-const itemList = document.querySelector("#item-list");
 
+const itemList = document.querySelector("#item-list");
     const img = document.createElement('img'); 
     img.setAttribute('src', `${item.image}`);
     imageContainer.appendChild(img);
@@ -30,7 +40,6 @@ const itemList = document.querySelector("#item-list");
     imageContainer.appendChild(p);
     imageContainer.appendChild(qty);
     imageContainer.appendChild(addToCartBtn);
-
     itemList.appendChild(imageContainer)
 })
 document.querySelectorAll('.add-to-cart').forEach(item => {
@@ -43,3 +52,4 @@ document.addEventListener('DOMContentLoaded', async()=> {
   products = await getGrain();
   updateUI(grain);
 })
+
