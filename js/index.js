@@ -5,7 +5,6 @@ const options = {
 		'X-RapidAPI-Host': 'jumia-service.p.rapidapi.com'
 	}
 };
-
 fetch('https://jumia-service.p.rapidapi.com/api/product/search/grain/4', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
@@ -47,9 +46,5 @@ document.querySelectorAll('.add-to-cart').forEach(item => {
     //handle click
     console.log("added")
   })
-})
-document.addEventListener('DOMContentLoaded', async()=> {
-  products = await getGrain();
-  updateUI(grain);
 })
 
