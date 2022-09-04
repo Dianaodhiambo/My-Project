@@ -4,6 +4,7 @@ A number of people struggle with shopping for cereals. Dee's cereals App aims to
 By Diana Odhiambo
 
 Table of Contents
+
 Description
 
 Known Bugs
