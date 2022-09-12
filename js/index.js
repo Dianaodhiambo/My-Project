@@ -5,17 +5,17 @@ const options = {
 		'X-RapidAPI-Host': 'jumia-service.p.rapidapi.com'
 	}
 };
+
 fetch('https://jumia-service.p.rapidapi.com/api/product/search/grain/4', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
-
-
+  
   grain.forEach((item, index,)=> {
     const imageContainer = document.createElement('div');
     imageContainer.setAttribute('class', 'col-3 text-center');
 
-const itemList = document.querySelector("#item-list");
+  const itemList = document.querySelector("#item-list");
     const img = document.createElement('img'); 
     img.setAttribute('src', `${item.image}`);
     imageContainer.appendChild(img);
@@ -34,7 +34,7 @@ const itemList = document.querySelector("#item-list");
     const addToCartBtn = document.createElement('button');
     addToCartBtn.setAttribute('class', 'btn btn-warning btn-sm');
     addToCartBtn.textContent = "Add To Cart";
-
+    
     imageContainer.appendChild(h5);
     imageContainer.appendChild(p);
     imageContainer.appendChild(qty);
@@ -47,4 +47,7 @@ document.querySelectorAll('.add-to-cart').forEach(item => {
     console.log("added")
   })
 })
-
+document.addEventListener('DOMContentLoaded', async()=> {
+  products = await getGrain();
+  updateUI(grain);
+})
