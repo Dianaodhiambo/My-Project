@@ -98,6 +98,17 @@ image{
     position: relative;
     color: #555;
 }
+.title::after{
+    content: '';
+    background: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /*-----------------footer-----------*/
 .footer{
